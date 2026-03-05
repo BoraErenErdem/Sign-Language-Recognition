@@ -470,6 +470,34 @@ RLRP: ReduceLROnPlateau
 
 ---
 
+## features/ Klasörü Hakkında
+
+`features/` klasörü repoya dahil edilmemiştir. Bunun iki temel sebebi vardır:
+
+**1. Boyut:**
+
+`landmarks_extract.py` tarafından üretilen 83,399 adet `.npy` dosyası ve `load_dataset.py` tarafından oluşturulan augmented cache dosyaları toplamda ~3–4 GB yer kapladı. Boyutun daha fazla ağırlaşmaması için repoya dahil edilmedi. 
+
+| Dosya / Klasör | Açıklama | Boyut (yaklaşık) |
+|----------------|----------|-----------------|
+| `features/train/{class_idx}/*.npy` | 40,154 video landmark çıktısı | ~1.2 GB |
+| `features/val/{class_idx}/*.npy` | 10,304 video landmark çıktısı | ~300 MB |
+| `features/test/{class_idx}/*.npy` | 32,941 video landmark çıktısı | ~1 GB |
+| `features/cache_train_aug.npz` | 6× augmented train cache | ~750 MB |
+| `features/cache_val.npz` | Val cache | ~30 MB |
+| `features/cache_test.npz` | Test cache | ~100 MB |
+
+**2. Yeniden üretilebilirlik:**
+
+`features/` klasörü sabit değildir. 2 adımla sıfırdan koalyca .npy featuresları üretilebilir.
+
+- **Adım 1 — Landmark çıkarımı:** `landmarks_extract.py` çalıştırılır. ASL Citizen'daki 83,399 videonun her birinden MediaPipe Holistic ile pose + her iki el landmarkları çıkarılır ve `(30, 258)` shape'inde `.npy` olarak kaydedilir. Bu işlem toplamda ~132 saat sürer. (train: ~63 saat, val: ~18 saat, test: ~51 saat). (donanıma bağlı olarak değişebilir!)
+- **Adım 2 — Cache oluşturma:** `load_dataset.py` ilk çalıştırmada `.npy` dosyalarını okuyarak augmentation uygular ve sonucu `cache_*.npz` olarak kaydeder. Sonraki çalıştırmalarda bu cache direkt yüklenir. Model deneyleri ve öngörüler için oldukça önemlidir (dakikalar → saniyeler).
+
+> **Not:** Augmentation mantığı değiştirilirse `cache_*.npz` dosyaları silinmeli ve `load_dataset.py` yeniden çalıştırılmalıdır.
+
+---
+
 ## Dataset Lisansı
 
 ASL Citizen veri seti **Microsoft Research Lisansı** altındadır (`ASL_Citizen/use.txt`):
