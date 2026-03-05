@@ -1,0 +1,22 @@
+# Veri seti — video ve split dosyaları (lisans + boyut)
+ASL_Citizen/videos/
+ASL_Citizen/splits/
+
+# features dosyaları yeniden üretilebilir. (landmarks_extract.py + load_dataset.py)
+features/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
