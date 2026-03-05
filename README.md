@@ -151,7 +151,7 @@ sign_language/
 
 > **Not:** `landmarks_extract.py`, `load_dataset.py` ve `inference.py` dosyalarının en üstünde proje dizinine ait sabit path'ler bulunmaktadır. Çalıştırmadan önce bu path'leri kendi dizininize göre güncellemeyi unutmayın.
 
-### Adım 1: ASL Citizen Veri Setini İndir
+### Adım 1: ASL Citizen Veri Setinin İndirilmesi
 
 Veri seti [Microsoft'un sitesinden](https://download.microsoft.com/download/b/8/8/b88c0bae-e6c1-43e1-8726-98cf5af36ca4/ASL_Citizen.zip) indirilebilir. İndirilen videolar `ASL_Citizen/videos/` klasörüne, CSV dosyaları `ASL_Citizen/splits/` klasörüne konulmalıdır.
 
@@ -282,6 +282,10 @@ hand landmarks: önce bilek-göreceli, sonra bilek vücut-göreceli
 ---
 
 ### `load_dataset.py`
+
+<p align="center">
+  <img src="docs/class_distribution.png" width="100%"/>
+</p>
 
 `.npy` dosyalarını yükler, augmentasyon uygular ve sonuçları cache'e kaydeder.
 
@@ -455,6 +459,10 @@ RLRP: ReduceLROnPlateau
 
 <p align="center">
   <img src="docs/version_comparison.png" width="100%"/>
+</p>
+
+<p align="center">
+  <img src="docs/lr_schedule_comparison.png" width="100%"/>
 </p>
 
 **En iyi model:** `models/cnn_bilstm_attention_model_v5.h5`
