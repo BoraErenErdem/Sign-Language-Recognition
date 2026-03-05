@@ -12,7 +12,13 @@
 
 ---
 
-### *Projenin gelişim süreci, mimari kararlar, deney sonuçlarının detaylı analizi ve teknik kısımlar için: [REPORT.md](REPORT.md)*
+### *Projenin gelişim süreci, mimari kararlar, deney sonuçlarının detaylı analizi ve teknik kısımlar için:*
+
+> 📄 [REPORT.md](REPORT.md) — Türkçe rapor
+>
+> 📄 [REPORT_ENG.md](REPORT_ENG.md) — English report
+>
+> 📑 [REPORT_ENG.pdf](REPORT_ENG.pdf) — PDF (English)
 
 ---
 
