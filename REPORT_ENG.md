@@ -659,6 +659,13 @@ These parameters balance two types of errors:
   <em>SSHH sign — stable prediction with 75% confidence score</em>
 </p>
 
+<p align="center">
+  <img src="docs/demo.gif" alt="Inference Demo" width="100%"/>
+</p>
+<p align="center">
+  <em>Real-time inference demo</em>
+</p>
+
 ---
 
 ## 12. Results and Analysis

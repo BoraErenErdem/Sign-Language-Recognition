@@ -3,11 +3,7 @@
 **Microsoft ASL Citizen veri seti üzerinde eğitilmiş CNN + BiLSTM + Multi-Head Attention mimarisi kullanılarak webcam üzerinden 2731 farklı ASL işaretini anlık olarak tanıyıp cümle oluşturabilen gerçek zamanlı Amerikan İşaret Dili (ASL) tanıma sistemi geliştirildi.**
 
 <p align="center">
-  <img src="docs/dentist97.png" width="49%"/>
-  <img src="docs/greet_my_hairdryer_fine.png" width="49%"/>
-</p>
-<p align="center">
-  <em>Sol: Yüksek güven tahmini (%97.6) &nbsp;&nbsp; Sağ: Cümle oluşturma</em>
+  <img src="docs/demo.gif" width="80%"/>
 </p>
 
 ---

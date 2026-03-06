@@ -657,6 +657,13 @@ Bu parametreler iki hatayı dengeler:
   <em>SSHH işareti — %75 güven skoru ile kararlı tahmin</em>
 </p>
 
+<p align="center">
+  <img src="docs/demo.gif" alt="Inference Demo" width="100%"/>
+</p>
+<p align="center">
+  <em>Gerçek zamanlı inference demosu</em>
+</p>
+
 ---
 
 ## 12. Sonuçlar ve Analiz
